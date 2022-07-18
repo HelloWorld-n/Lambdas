@@ -16,7 +16,6 @@ let x = "";
 		let cmds = []
 		for (let chr of "---") {
 			str += chr
-			console.log(str)
 			cmds[cmds.length] = (eval(`() => {
 				x += "${str}"
 			}`))
@@ -27,7 +26,7 @@ let x = "";
 		return cmds
 	})(),
 	() => {
-		console.log(x + "\n")
+		console.log(x)
 		x = ""
 	},
 )
