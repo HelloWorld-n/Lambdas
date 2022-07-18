@@ -11,19 +11,17 @@ let x = "";
 		}
 	}, rndSample)
 })(
-	...(
-		() => {
-			str = ""
-			cmds = []
-			for (let chr of "---") {
-				str += chr
-				cmds[cmds.length] = (() => {
-					x += str
-				})
-			}
-			return cmds
+	...(() => {
+		str = ""
+		cmds = []
+		for (let chr of "---") {
+			str += chr
+			cmds[cmds.length] = (() => {
+				x += str
+			})
 		}
-	)(),
+		return cmds
+	})(),
 	() => {
 		console.log(x + "\n")
 		x = ""
