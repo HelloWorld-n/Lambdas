@@ -17,7 +17,7 @@ let x = "";
 		for (let chr of "---") {
 			str += chr
 			cmds[cmds.length] = (eval(`() => {
-				x += "${str}"
+				x += ${JSON.stringify(str)}
 			}`))
 			for (let cmd of cmds) {
 				cmd()
